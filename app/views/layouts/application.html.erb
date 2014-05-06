@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MosApp</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<%= image_tag "logo.gif" %>
+<div align="right">
+
+<%= link_to 'カートを表示', carts_path %>
+<%= link_to 'カートに追加', new_cart_path %>
+</div>
+
+<%= yield %>
+
+</body>
+</html>

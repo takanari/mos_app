@@ -1,0 +1,28 @@
+<h1>数量変更</h1>
+
+<%= form_for(@cart) do |f| %>
+  <% if @cart.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@cart.errors.count, "error") %> prohibited this cart from being saved:</h2>
+
+      <ul>
+      <% @cart.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+      <%= @cart.mo.name %>
+  </div>
+
+  <div class="field">
+    数量<br>
+    <%= f.number_field :quantity %>
+  </div>
+  <div class="actions">
+    <%= f.submit '変更'%>
+  </div>
+<% end %>
+<%= link_to '戻る', carts_path %>
